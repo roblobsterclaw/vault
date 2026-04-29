@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rob's Document Vault 🦞</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="lock" class="lock-screen">
+    <div class="lock-card">
+      <div class="lobster">🦞</div>
+      <h1>Rob's Document Vault</h1>
+      <p>Private document browser for Joe. Light password gate only.</p>
+      <form id="loginForm">
+        <input id="password" type="password" autocomplete="current-password" placeholder="Enter vault password" />
+        <button type="submit">Unlock Vault</button>
+      </form>
+      <p id="loginError" class="error"></p>
+      <p class="security-note">Note: this GitHub Pages version is for non-sensitive docs only.</p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <div>
+        <h1>Rob's Document Vault 🦞</h1>
+        <p id="subtitle">Loading documents...</p>
+      </div>
+      <button id="lockBtn" class="ghost">Lock</button>
+    </header>
+    <section class="controls">
+      <div class="search-wrap"><span>🔎</span><input id="search" type="search" placeholder="Search documents, departments, descriptions..." /></div>
+      <select id="sort"><option value="date-desc">Newest first</option><option value="date-asc">Oldest first</option><option value="name-asc">Name A-Z</option><option value="type-asc">Type</option></select>
+    </section>
+    <nav id="tabs" class="tabs"></nav>
+    <main><div id="summary" class="summary"></div><div id="cards" class="cards"></div><div id="empty" class="empty hidden">No documents match that search.</div></main>
+  </div>
+  <dialog id="historyDialog"><div class="dialog-head"><h2>Document History</h2><button id="closeHistory" class="ghost">Close</button></div><div id="historyBody"></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
