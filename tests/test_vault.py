@@ -21,6 +21,8 @@ def test_app_contains_core_features():
     assert 'manifest.json' in js
     assert 'History' in js
     assert 'sessionStorage' in js
+    assert "VAULT_PASSWORD='soccer12'" in js
+    assert 'ROBLOBSTER' not in js
     assert '@media(max-width:700px)' in css
 
 def test_department_folders_exist():
